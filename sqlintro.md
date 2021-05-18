@@ -27,4 +27,7 @@
 3. update data in the table,
 4. Delete data from the table.
 
+### Select Statement command
+After `creating a table`and `inserting data into` 
+
 
