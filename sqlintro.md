@@ -21,6 +21,10 @@
 1. The terms database, database server, database system, data server, and database management systems are often used interchangeably.
 2. RDBMS is a set of software tools that controls the data such as access, organization, and storage. And RDBMS serves as the backbone of applications in many industries including banking, transportation, health, and so on.
 
-## 
+## 5 Basic Commands in SQL
+1. Insert data to populate the table,
+2. select data from the table,
+3. update data in the table,
+4. Delete data from the table.
 
 
