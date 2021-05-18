@@ -14,7 +14,7 @@
 1. A repository of data ( a program that stores data)
 2. Provides the functionality for adding, modifing and querying that data
 
-...### 3.1 Relational Database
+### 3.1 Relational Database
 1. Data Stored in tabular form (column x row)
 
 ## DBMS -> Database management system and RDBMS -> Relational database management system
