@@ -64,11 +64,14 @@ SELECT Title, ProductionsCompany, Locations, ReleaseYear FROM FilmLocations WHER
 
  ### COUNT, DISTINCT, LIMIT
  1. Count -> It's a built-in database function that `retrieves` the number of rows that match the query criteria.
-··· (lembrar que esse interpoint é colocado 
+ 
+··· Example -> Get the total number of rows in a given table,
  ``` sql
- SELECT * FROM database
+ select COUNT(*) from tablename
  ```
-1. First ordered list item
+ > Shift + Option + 9 -> Interpoint 
+ 
+2. First ordered list item
 2. Another item
 ⋅⋅* Unordered sub-list. 
 1. Actual numbers don't matter, just that it's a number
