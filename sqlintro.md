@@ -39,4 +39,4 @@ Select * from <tablename>
  ### COUNT, DISTINCT, LIMIT
  1. Count -> It's a built-in database function that `retrieves` the number of rows that match the query criteria.
  
- ... Ex:
+ ...Ex:
