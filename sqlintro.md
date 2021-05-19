@@ -30,6 +30,9 @@
 ### Select Statement command
 After `creating a table` and `inserting data into`, we want to see the data
 
+``` sql
+SELECT * FROM FilmLocations;
+```
 Select Statement: Query
 Result set/table
 Select * from <tablename> 
