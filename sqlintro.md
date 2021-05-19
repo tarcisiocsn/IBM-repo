@@ -37,21 +37,25 @@ SELECT Title, Director, Writer FROM FilmLocations;
 
 SELECT Title, ReleaseYear, Locations FROM Filmlocations WHERE ReleaseYear >= 2001;
 ```
-··· Others Problems
+Others Problems
+
 1. Problem 1
-··· Retrieve the fun facts and filming locations of all films
+
+Retrieve the fun facts and filming locations of all films
 
 ```sql
 SELECT Locations, FunFacts FROM FilmLocation;
 ```
 2. Problem 2
-··· Retrieve the names of all films released in the 20th century and before (release year before 2000 including 2000) that, along filming locations and release years.
+
+Retrieve the names of all films released in the 20th century and before (release year before 2000 including 2000) that, along filming locations and release years.
 
 ```sql
 SELECT Title, Locations, ReleaseYear FROM FilmLocations WHERE ReleaseYear <== 2000; 
 ```
 3. Problem 2
-··· Retrieve the names, production company, names, filming locations and release years of the films which are not written by James Cameron.
+
+Retrieve the names, production company, names, filming locations and release years of the films which are not written by James Cameron.
 
 ```sql
 SELECT Title, ProductionsCompany, Locations, ReleaseYear FROM FilmLocations WHERE Writer <> "James Cameron"; 
