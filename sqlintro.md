@@ -39,9 +39,9 @@ Select * from <tablename>
  ### COUNT, DISTINCT, LIMIT
  1. Count -> It's a built-in database function that `retrieves` the number of rows that match the query criteria.
 ··· (lembrar que esse interpoint é colocado 
- ~~~ sql
+ ``` sql
  SELECT * FROM database
- 
+ ```
 1. First ordered list item
 2. Another item
 ⋅⋅* Unordered sub-list. 
