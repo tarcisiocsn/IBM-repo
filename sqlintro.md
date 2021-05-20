@@ -65,14 +65,20 @@ SELECT Title, ProductionsCompany, Locations, ReleaseYear FROM FilmLocations WHER
  ### COUNT, DISTINCT, LIMIT
  1. Count -> It's a built-in database function that `retrieves` the number of rows that match the query criteria.
  
-··· Example -> Get the total number of rows in a given table,
+··· Example 1 -> Get the total number of rows in a given table,
  ``` sql
  select COUNT(*) from tablename
  ```
  > Shift + Option + 9 -> Interpoint 
  
-2. First ordered list item
-2. Another item
+ ··· Example -> Let's say you create a table called MEDALS which has a column called COUNTRY, and you want to retrieve the number of rows where the medal recipient is from Canada.
+ ``` sql
+ select COUNT(COUNTRY) from MEDALS where COUNTRY = "Canada; 
+ 
+ ```
+2. Distict -> It's used to remove duplicate values from a result set
+
+4. Another item
 ⋅⋅* Unordered sub-list. 
 1. Actual numbers don't matter, just that it's a number
 ⋅⋅1. Ordered sub-list
