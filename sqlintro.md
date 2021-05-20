@@ -53,7 +53,7 @@ Retrieve the names of all films released in the 20th century and before (release
 ```sql
 SELECT Title, Locations, ReleaseYear FROM FilmLocations WHERE ReleaseYear <== 2000; 
 ```
-3. Problem 2
+3. Problem 3
 
 Retrieve the names, production company, names, filming locations and release years of the films which are not written by James Cameron.
 
@@ -76,20 +76,43 @@ SELECT Title, ProductionsCompany, Locations, ReleaseYear FROM FilmLocations WHER
  select COUNT(COUNTRY) from MEDALS where COUNTRY = "Canada; 
  
  ```
-2. Distict -> It's used to remove duplicate values from a result set
+2. Distinct -> It's used to remove duplicate values from a result set.
 
-4. Another item
-⋅⋅* Unordered sub-list. 
-1. Actual numbers don't matter, just that it's a number
-⋅⋅1. Ordered sub-list
-4. And another item.
+ ··· Example -> to retrieve unique values in a column.
+ ```sql
+ select DISTINCT columname from Table
+```
+> In the MEDALS table mentioned earlier, a country may have received a gold medal multiple times.
 
-⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+··· Example -> retrieve the list of unique countries that received gold medals (That is, removing all duplicate values of the same country).
+```sql
+select DISTINCT COUNTRY from MEDALS where MEDALTYPE = 'GOLD'
+```
+3. Limit -> It's used for restricting the number of rows retrieved from the database.
 
-⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
-⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
-⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+··· Example -> Retrieve just the first 10 rows in a table.
 
-* Unordered list can use asterisks
-- Or minuses
-+ Or pluses
+```sql
+select * from tablename LIMIT 10
+```
+··· Example -> Retrieve just a few rows in the MEDALS table for a particular year.
+
+```sql 
+select * from MEDALS where YEAR = 10 LIMIT 5
+```
+Output
+
+| COUNTRY      | GOLD  | SILVER | BRONZE | TOTAL   | YEAR  |
+| ------------ | :---: | :---:  | :----: | -----:  | :---: |
+| Norway       | 18    | 14     | 11     | 39      | 2018  |
+| Germany      | :---: | :---:  | :----: | -----:  | 2018  |
+| ------------ | :---: | :---:  | :----: | -----:  | 2018  |
+| ------------ | :---: | :---:  | :----: | -----:  | 2018  |
+
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
