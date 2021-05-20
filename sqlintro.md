@@ -119,7 +119,8 @@ Output
 
 OTHERS PROBLEMS
 
-Count ··
+Count 
+
 Problem 1. In this example, now we want to count the number of locations of the films. But we also want to restrict the output resultset in such a way that we only retrieve the number of locations of the films written by a certain writer.
 
 ``` sql
@@ -139,3 +140,25 @@ Problem 4. Retrieve the number of rows having a release year older than 1950 fro
 ``` sql
 select count(ReleaseYear) from FilmLocations where ReleaseYear < 1950; 
 ```
+
+Distinct
+
+Problem 1. In this example, we want to retrieve the title of all films in the table in such a way that duplicates will be discarded in the output resultset.
+> Retrieve the name of all films without any repeated titles.
+
+```sql
+select distinct Title from FilmLocations;
+
+vamos encontrar uma tabela com os títulos não repetidos
+```
+
+Problem 2. In this example, we want to retrieve the count of release years of the films produced by a specific company in such a way that duplicate release years of those films will be discarded in the count.
+> Retrieve the number of release years of the films distinctly, produced by Warner Bros. Pictures.
+
+```sql
+select count(distinct ReleaseYears) from FilmLocations where ProductionCompany = "Warner Bros.";
+
+vamos encontrar o número de produções feitas ao longo do tempo, mas não contará as produções duplicadas de anos
+```
+
+
