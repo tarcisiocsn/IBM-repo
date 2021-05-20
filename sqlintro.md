@@ -119,7 +119,7 @@ Output
 
 OTHERS PROBLEMS
 
-Count -
+Count ··
 Problem 1. In this example, now we want to count the number of locations of the films. But we also want to restrict the output resultset in such a way that we only retrieve the number of locations of the films written by a certain writer.
 
 ``` sql
