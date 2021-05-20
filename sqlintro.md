@@ -161,4 +161,12 @@ select count(distinct ReleaseYears) from FilmLocations where ProductionCompany =
 vamos encontrar o número de produções feitas ao longo do tempo, mas não contará as produções duplicadas de anos
 ```
 
+Problem 3. Retrieve the name of all unique films released in the 21st century and onwards, along with their release years.
+```sql
+select distinct Title, ReleaseYear from FilmLocations where ReleaseYear >= 2001;
+
+```
+Output
+
+![alt text](<img width="528" alt="image" src="https://user-images.githubusercontent.com/68601128/119020585-c8bb6000-b974-11eb-82d1-6303f2070af1.png">"Logo Title Text 1")
 
