@@ -106,8 +106,9 @@ Output
 | ------------ | :---: | :---:  | :----: | -----:  | :---: |
 | Norway       | 18    | 14     | 11     | 39      | 2018  |
 | Germany      | :---: | :---:  | :----: | -----:  | 2018  |
-| ------------ | :---: | :---:  | :----: | -----:  | 2018  |
-| ------------ | :---: | :---:  | :----: | -----:  | 2018  |
+| USA          | :---: | :---:  | :----: | -----:  | 2018  |
+| Canada       | :---: | :---:  | :----: | -----:  | 2018  |
+| Brazil       | :---: | :---:  | :----: | -----:  | 2018  |
 
 
 | Tables        | Are           | Cool  |
@@ -116,3 +117,25 @@ Output
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
+OTHERS PROBLEMS
+
+Count -
+Problem 1. In this example, now we want to count the number of locations of the films. But we also want to restrict the output resultset in such a way that we only retrieve the number of locations of the films written by a certain writer.
+
+``` sql
+select count(Locations) from FilmLocations where Writer = 'James Cameron'; 
+```
+
+Problem 2. Retrieve the number of locations of the films which are directed by Woody Allen.
+``` sql
+select count(Locations) from FilmLocations where Director = 'Woody Allen'; 
+```
+
+Problem 3. Retrieve the number of films shot at Russian Hill.
+``` sql
+select count(Locations) from FilmLocations where Locations = 'Russian Hill'; 
+```
+Problem 4. Retrieve the number of rows having a release year older than 1950 from the "FilmLocations" table.
+``` sql
+select count(ReleaseYear) from FilmLocations where ReleaseYear < 1950; 
+```
