@@ -296,6 +296,7 @@ WHERE ins_id=5;
 SELECT * FROM Instructor;
 ```
 OUTPUT
+
 <img width="510" alt="image" src="https://user-images.githubusercontent.com/68601128/119173677-f7e9d400-ba3d-11eb-8e72-ed6696e99896.png">
 
 **Example DELETE**
@@ -323,3 +324,33 @@ select * from instructor
 OUTPUT
 
 <img width="510" alt="image" src="https://user-images.githubusercontent.com/68601128/119174828-74c97d80-ba3f-11eb-8b19-2fcbc03441d3.png">
+
+## Database Concepts
+
+Relational Model
+
+1. Most used data model
+2. Allows for data independence
+3. Data is stored in a tables
+
+### Entity-Relathioship Model 
+
+<img width="607" alt="image" src="https://user-images.githubusercontent.com/68601128/119176845-f4f0e280-ba41-11eb-8a56-6fc6f676a24b.png">
+
+Mapping Entity Diagrams to Table
+
+<img width="551" alt="image" src="https://user-images.githubusercontent.com/68601128/119177027-22d62700-ba42-11eb-88f8-4f9c66a0efd6.png">
+
+Primary Keys and Foreing Keys
+
+<img width="595" alt="image" src="https://user-images.githubusercontent.com/68601128/119177129-3f725f00-ba42-11eb-95f1-20c875cb1b70.png">
+
+### How to Create a Database Instance on Cloud
+
+In order to learn SQL, you first need to have a database available to practice your SQL queries. An easy way to do so is to create an instance of a database in the Cloud and use it to execute your SQL queries.
+
+<img width="576" alt="image" src="https://user-images.githubusercontent.com/68601128/119177508-caebf000-ba42-11eb-9e6c-a060bd8ba711.png">
+
+To see how tu use [click here](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Labs_Coursera_V5/labs/Lab%20-%20Sign%20up%20for%20IBM%20Cloud%20-%20Create%20Db2%20service%20instance%20-%20Get%20started%20with%20the%20Db2%20console/instructional-labs.md.html).
+
+
