@@ -237,7 +237,7 @@ WHERE condition
 
 ```
 
-**Example**
+**Example INSERT**
 In this example, suppose we want to insert a new single row into the Instructor table.
 1. Problem
 > Insert a new instructor record with id 4 for Sandip Saha who lives in Edmonton, CA into the "Instructor" table.
@@ -259,6 +259,7 @@ In this example, suppose we want to insert some new multiple rows into the Instr
 Agora terá mais 2 nomes
 
 ```sql 
+# lembrar de colocar '' nas strings 
 
 INSERT INTO Instructor(ins_id, lastname, firstname, city, country)
 VALUES(5, 'Doe', 'John', 'Sydney', 'AU'), (6, 'Doe', 'Jane', 'Dhaka', 'BD');
@@ -267,7 +268,58 @@ VALUES(5, 'Doe', 'John', 'Sydney', 'AU'), (6, 'Doe', 'Jane', 'Dhaka', 'BD');
 select * from Instructor
 ```
 OUTPUT
+
 <img width="512" alt="image" src="https://user-images.githubusercontent.com/68601128/119172031-c6700900-ba3b-11eb-8360-99f76b15cbc1.png">
 
+**Example UPDATE**
+In this example, we want to update one column of an existing row of the table.
+> 1 Problem. Update the city for Sandip to Toronto.
+```SQL
+UPDATE Instructor 
+SET city='Toronto' 
+WHERE firstname="Sandip";
 
+select * from Instructor;
+```
+OUTPUT
 
+<img width="509" alt="image" src="https://user-images.githubusercontent.com/68601128/119173441-a6d9e000-ba3d-11eb-8f47-fcd847770e07.png">
+
+In this example, we want to update multiple columns of an existing row of the table.
+> 2 Problem. Update the city and country for Doe with id 5 to Dubai and AE respectively.
+
+```sql 
+UPDATE Instructor 
+SET city='Dubai', country='AE' 
+WHERE ins_id=5;
+
+SELECT * FROM Instructor;
+```
+OUTPUT
+<img width="510" alt="image" src="https://user-images.githubusercontent.com/68601128/119173677-f7e9d400-ba3d-11eb-8e72-ed6696e99896.png">
+
+**Example DELETE**
+In this example, we want to remove a row from the table
+> Remove the instructor record of Doe whose id is 6.
+
+```sql
+DELETE FROM instructor
+WHERE ins_id = 6;
+
+select * from Instructor;
+``` 
+OUTPUT
+
+<img width="487" alt="image" src="https://user-images.githubusercontent.com/68601128/119174534-13091380-ba3f-11eb-8870-acc69a84614a.png">
+
+> 1 Problem 
+
+```sql 
+delete from instructor 
+where city = 'Hima'; 
+
+select * from instructor
+```
+OUTPUT
+
+<img width="510" alt="image" src="https://user-images.githubusercontent.com/68601128/119174828-74c97d80-ba3f-11eb-8b19-2fcbc03441d3.png">
