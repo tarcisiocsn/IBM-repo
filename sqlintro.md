@@ -119,7 +119,7 @@ Output
 
 OTHERS PROBLEMS
 
-Count 
+COUNT
 
 Problem 1. In this example, now we want to count the number of locations of the films. But we also want to restrict the output resultset in such a way that we only retrieve the number of locations of the films written by a certain writer.
 
@@ -141,7 +141,7 @@ Problem 4. Retrieve the number of rows having a release year older than 1950 fro
 select count(ReleaseYear) from FilmLocations where ReleaseYear < 1950; 
 ```
 
-Distinct
+DISTINCT
 
 Problem 1. In this example, we want to retrieve the title of all films in the table in such a way that duplicates will be discarded in the output resultset.
 > Retrieve the name of all films without any repeated titles.
@@ -169,4 +169,105 @@ select distinct Title, ReleaseYear from FilmLocations where ReleaseYear >= 2001;
 Output
 
 ![alt text](<img width="528" alt="image" src="https://user-images.githubusercontent.com/68601128/119020585-c8bb6000-b974-11eb-82d1-6303f2070af1.png">"Logo Title Text 1")
+
+Problem 4. Retrieve the number of distributors distinctly who distributed films acted by Clint Eastwood as 1st actor.
+```sql
+select count(distinct Distributor) from FilmLocations where Actor1 = 'Clint Eastwood';
+
+```
+LIMIT
+
+Problem 1. Retrieve the first 25 rows from the "FilmLocations" table.
+
+```sql 
+select * from FilmLocations limit 25;
+``` 
+
+Problem 2. Retrieve the first 15 rows from the "FilmLocations" table starting from row 11.
+
+```sql 
+select * from FilmLocations limit 15 offset 10;
+
+```
+
+Problem 3. Retrieve the name of first 50 films distinctly.
+
+```sql 
+select * distinct Title from FilmLocations limit 50;
+
+```
+
+Problem 4. Retrieve the next 3 film names distinctly after first 5 films released in 2015.
+```sql 
+select * distinct Title from FilmLocations where YearRelease = 2015 limit 3 offset 5;
+```
+
+### INSERT STATEMENT
+
+Adding a row in a table
+··* Create the table (CREATE TABLE statement)
+
+··* Populate Table with data:
+
+··· INSERT 
+··· A data manipulate language (DML) statement used to read and modify data
+
+```sql
+INSERT INTO table_name (column1, column2, ... )
+VALUES (value1, value2, ... )
+;
+
+```
+### UPDATE & DELETE STATEMENT
+
+After create a table and inserting data into the table, we can alter the data
+··· UPDATE & DELETE STATEMENT -> A DML statement used to read and modify data
+
+```sql
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition
+;
+
+```
+```sql
+DELETE FROM table_name
+WHERE condition
+;
+
+```
+
+**Example**
+In this example, suppose we want to insert a new single row into the Instructor table.
+1. Problem
+> Insert a new instructor record with id 4 for Sandip Saha who lives in Edmonton, CA into the "Instructor" table.
+
+```sql 
+
+INSERT INTO Instructor(ins_id, lastname, firstname, city, country)
+VALUES(4, 'Saha', 'Sandip', 'Edmonton', 'CA');
+
+# Then, see the change with the statement:
+select * from Instructor
+```
+
+In this example, suppose we want to insert some new multiple rows into the Instructor table.
+
+2. Problem
+> Insert two new instructor records into the "Instructor" table. First record with id 5 for John Doe who lives in Sydney, AU. Second record with id 6 for Jane Doe who lives in Dhaka, BD.
+
+Agora terá mais 2 nomes
+
+```sql 
+
+INSERT INTO Instructor(ins_id, lastname, firstname, city, country)
+VALUES(5, 'Doe', 'John', 'Sydney', 'AU'), (6, 'Doe', 'Jane', 'Dhaka', 'BD');
+
+# Then, see the change with the statement:
+select * from Instructor
+```
+OUTPUT
+<img width="512" alt="image" src="https://user-images.githubusercontent.com/68601128/119172031-c6700900-ba3b-11eb-8360-99f76b15cbc1.png">
+
+
 
