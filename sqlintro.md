@@ -353,4 +353,9 @@ In order to learn SQL, you first need to have a database available to practice y
 
 To see how tu use [click here](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Labs_Coursera_V5/labs/Lab%20-%20Sign%20up%20for%20IBM%20Cloud%20-%20Create%20Db2%20service%20instance%20-%20Get%20started%20with%20the%20Db2%20console/instructional-labs.md.html).
 
+### DDL VS DML
 
+···ddl - used for defining objects (tables) -> create, alter, truncate and drop. 
+···dml - CRED (Create, read, update and delete) - used for manipulating data in tables -> insert, select, update and delete. 
+
+Create Table
