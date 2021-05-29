@@ -355,7 +355,245 @@ To see how tu use [click here](https://cf-courses-data.s3.us.cloud-object-storag
 
 ### DDL VS DML
 
-···ddl - used for defining objects (tables) -> create, alter, truncate and drop. 
-···dml - CRED (Create, read, update and delete) - used for manipulating data in tables -> insert, select, update and delete. 
+···ddl - used for defining objects (tables) -> create, alter, truncate and drop.··
 
-Create Table
+···dml - CRED (Create, read, update and delete) - used for manipulating data in tables -> insert, select, update and delete.··
+
+### CREATE, ALTER, TRUNCATE AND DROP A TABLE 
+
+In this lab, you will learn some commonly used DDL (Data Definition Language) statements of SQL. First you will learn the CREATE statement, which is used to create a new table in a database. Next, you will learn the ALTER statement which is used to add, delete, or modify columns in an existing table. Then, you will learn the TRUNCATE statement which is used to remove all rows from an existing table without deleting the table itself. Lastly, you will learn the DROP statement which is used to delete an existing table in a database.
+
+**How does the syntax of a CREATE statement look?**
+
+```SQL 
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+   ....
+);
+```
+**How does the syntax of an ALTER statement look?**
+
+```SQL 
+
+ALTER TABLE table_name
+ADD COLUMN column_name data_type column_constraint;
+
+ALTER TABLE table_name
+DROP COLUMN column_name;
+
+ALTER TABLE table_name
+ALTER COLUMN column_name SET DATA TYPE data_type;
+
+ALTER TABLE table_name
+RENAME COLUMN current_column_name TO new_column_name;
+```
+Example Alter table
+<img width="623" alt="image" src="https://user-images.githubusercontent.com/68601128/119592599-2f92ac00-bdaf-11eb-8f06-0f62575fcac4.png">
+
+···PS. BEGINT -> Can hold a number up to 19
+
+
+<img width="617" alt="image" src="https://user-images.githubusercontent.com/68601128/119592969-ccede000-bdaf-11eb-8ba6-0b3468d70a81.png">
+
+Nessa imagem vc está alterando o tipo de dados que está inputando na coluna, após o SET DATA TYPE, colocou char(20), que é a quantidade de caracteres que terá nessa célula, e por conter traço ou algo do tipo, é importante usar essa expressão char e não inserir apenas número, pois poderá dar erro ao inputar dados sem ser números.
+
+<img width="620" alt="image" src="https://user-images.githubusercontent.com/68601128/119593469-66b58d00-bdb0-11eb-9cd5-47d41937a406.png">
+
+Tirará todo os dados dentro da tabela. 
+
+### Create and Drop tables in the database
+
+Here we will look at some examples to create and drop tables. In the previous video we saw the general syntax to create a table: create table TABLENAME ( COLUMN1 datatype, COLUMN2 datatype, COLUMN3 datatype, ... ); 
+
+Therefore to create a table called TEST with two columns - ID of type integer, and Name of type varchar, we could create it using the following SQL statement:
+
+```sql
+create table TEST (
+     ID integer,
+     NAME varchar(30)
+     );
+
+```
+Now let's create a table called COUNTRY with an ID column, a two letter country code column, and a variable length country name column:
+
+```sql
+create table COUNTRY (
+    ID int,
+    CCODE char(2),
+    NAME VARCHAR(30)
+    );
+```
+Sometimes you may see additional keywords in a create table statement:
+
+```SQL 
+create table COUNTRY (
+    ID int NOT NULL,
+    CCODE char(2),
+    NAME VARCHAR(30),
+    PRIMARY KEY (ID)
+    );
+ ```
+ 
+In the above example the ID column has the `NOT NULL` constraint added after the datatype - meaning that it cannot contain a NULL or an empty value. If you look at the last row in the create table statement above you will note that we are using ID as a `Primary Key` and the database does not allow Primary Keys to have NULL values. A `Primary Key` is a unique identifier in a table, and using Primary Keys can help speed up your queries significantly. If the table you are trying to create already exists in the database, you will get an error indicating table **XXX.YYY** already exists. To circumvent this error, either create a table with a different name or first `DROP` the existing table. It is quite common to issue a DROP before doing a CREATE in test and development scenarios.  Here is an example:
+
+The primary key uniquely identifies each row in a table.
+
+```SQL 
+drop table COUNTRY;
+create table COUNTRY (
+    ID int NOT NULL,
+    CCODE char(2),
+    NAME VARCHAR(30),
+    PRIMARY KEY (ID)
+    );
+```
+
+[**SEE THE BEST EXAMPLE EVER** ](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Labs_Coursera_V5/labs/Lab%20-%20CREATE%20-%20ALTER%20-%20TRUNCATE%20-%20DROP/instructional-labs.md.html)
+
+[**OTHER ONE - NICE EXAMPLE EVER**](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Labs_Coursera_V5/labs/Lab%20-%20Create%20tables%20using%20SQL%20scripts%20and%20Load%20data%20into%20tables/instructional-labs.md.html)
+
+
+### INTERMEDIATE SQL
+
+Using Strings Patterns, Range
+
+If we can't remember the name of the author, but we remember that their name starts with R, we use the `where` clause with the predicate. 
+The like predicate is used in a `where` clause to search  for a pattern  in a column. The percent sign is used  to define missing letters. See the example down belown. 
+
+example:
+
+```sql 
+WHERE <column name> LIKE <string pattern> 
+WHERE firstname LIKE 'R%';]
+
+example:
+select firstname from Author WHERE firstname LIKE 'R%';
+
+--the percent sign can be placed before, after or both befor and after the pattern. 
+
+-- It is a comment in a sql code
+/* it is a comment as well in a sql code, but you can
+use in a multiple line */ 
+
+```
+
+OUTPUT
+<img width="258" alt="image" src="https://user-images.githubusercontent.com/68601128/119755213-0427c400-be78-11eb-9b2a-d4fba97c1be4.png">
+
+
+example:
+
+What if we wanted to retrieve the list of books whose number of pages  is more than  290, but less than 300. We can write the select statement like this. 
+
+```sql 
+select title, pages from book
+WHERE pages >= 290 AND pages <= 300; 
+
+-- posso fazer tbm usando 'between', já que os valores são inclusivos: 
+selec title, pages from book
+WHERE pages between 290 and 300; 
+
+-- resultado é igual. 
+```
+
+output
+
+<img width="365" alt="image" src="https://user-images.githubusercontent.com/68601128/119755435-6aace200-be78-11eb-9dd8-987145a90123.png">
+
+The values in the range are `inclusive`. In this case, we rewrite the query to specify the WHERE clause as where pages between 290 and 300. The result set is the same. But is easier and quick. 
+
+example:
+
+In some cases, there are  data values that  cannot be grouped  under ranges. For example, if we  wanted  to retrieve  authors from Australia or Brazil.
+
+```sql 
+select firstname, country from Author WHERE country = 'AU' or country = 'BR'; 
+
+/* However, what if  we want  to retrieve  authors from Canada, India and China? 
+the WHERE clause would become very long repeatedly listing the required country conditions. Instead, we can use de IN statement.*/ 
+
+select firstname, country from Author WHERE IN ('AU', 'BR')
+```
+
+<img width="412" alt="image" src="https://user-images.githubusercontent.com/68601128/119756114-73ea7e80-be79-11eb-9353-ec9dae34275e.png">
+
+<img width="383" alt="image" src="https://user-images.githubusercontent.com/68601128/119756439-eeb39980-be79-11eb-88b4-0a060cca42b7.png">
+
+
+Sorting Results Sets
+
+The main purpose of a database managemnent system is not just to store  the data, but also  facilitate retrieval of the data. 
+
+1. Using the ORDER BY clause
+
+···To display the result set in an alphabetical order, we add the order by clause to the select statement 
+
+```sql 
+select title from Book ORDER BY title 
+
+--By default the result set is sorted in ascending order
+
+-- se eu quiser em descending order, só colocar the key word DESC
+
+select title from Book ORDER BY tile DESC
+
+```
+
+2. Specifying Column Number
+
+··· Podemos indicar a ordem por qual coluna, por exemplo nessa abaixo está indicando pela segunda coluna da tabela. 
+
+<img width="344" alt="image" src="https://user-images.githubusercontent.com/68601128/119888677-0b001680-bf0c-11eb-8ca7-3cdf2c1963e9.png">
+
+3. Grouping Results Sets
+
+··· Eliminating Duplicates - DISTINCT clause 
+
+Basicamente elimina os duplicados da tabela, como aprendemos antes. 
+
+
+we need is a list of countries the authors come from. So in this case, duplicates do not make sense. To eliminate duplicates, we use the keyword distinct.
+
+Using the keyword "distinct" reduces the result set to just six rows.
+
+```sql 
+select country from Author ORDER by 1 
+-- SÓ MOSTRARÁ A PRIMEIRA COLUNA, e verificamos que terá duplicates e para tirar isso, usamos distinct
+
+select distinct(country) from Author
+```
+<img width="618" alt="image" src="https://user-images.githubusercontent.com/68601128/120018790-01cf8200-bfbe-11eb-9f3b-b16866eb3753.png">
+
+**But what if we wanted to also know how many authors come from the same country?**
+
+To display the result set listing the country and number of authors that come from that country, we add the "group by" clause to the select statement.
+
+<img width="618" alt="image" src="https://user-images.githubusercontent.com/68601128/120020475-2298d700-bfc0-11eb-8d6d-48f1c53027ea.png">
+
+··· Restricting the Result Set -HAVING clause
+
+<img width="614" alt="image" src="https://user-images.githubusercontent.com/68601128/120024528-bcaf4e00-bfc5-11eb-8194-8483c02197d9.png">
+
+**HANDS ON**
+
+[You can click here](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Module%203/LAB-String_Patterns_Sorting_Grouping.md.html)
+
+[And this one](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DB0201EN-SkillsNetwork/labs/Module%203/Lab3v5.md.html?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-coursesedxorg-SkillsNetworkCoursesIBMDeveloperSkillsNetworkDB0201ENSkillsNetwork20127838-2021-01-01)
+
+
+
+
+
+
+ 
+ 
+    
+    
+
+
+
+
+
+
